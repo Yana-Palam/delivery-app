@@ -1,0 +1,19 @@
+.list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+.item {
+}
+.link {
+  color: slateblue;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.link.active {
+  opacity: 1;
+}
+.link:hover:not(.active),
+.link:focus-visible:not(.active) {
+  opacity: 1;
+}
