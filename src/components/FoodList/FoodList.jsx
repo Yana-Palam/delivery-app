@@ -7,13 +7,13 @@ function FoodList() {
     <div>
       <ul className={s.list}>
         <li>
-          <FoodBlock />
+          <FoodBlock id="1" title="Big1 Burger" price={120} />
         </li>
         <li>
-          <FoodBlock />
+          <FoodBlock id="2" title="Big2 Burger" price={120} />
         </li>
         <li>
-          <FoodBlock />
+          <FoodBlock id="3" title="Big3 Burger" price={120} />
         </li>
       </ul>
     </div>

@@ -1,9 +1,16 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import s from "./AppBar.module.css";
 import Container from "../Container";
+import {
+  selectTotalPrice,
+  selectTotalItemsCount,
+} from "../../redux/cart/cartSelectors";
 
 function AppBar() {
+  const totalPrice = useSelector(selectTotalPrice);
+  const totaLItemsCount = useSelector(selectTotalItemsCount);
   return (
     <>
       <Container>
@@ -15,7 +22,7 @@ function AppBar() {
           </li>
           <li>
             <NavLink className={s.link} to="/cart">
-              Shopping Cart
+              Shopping Cart {totaLItemsCount}|{totalPrice}$
             </NavLink>
           </li>
         </ul>
