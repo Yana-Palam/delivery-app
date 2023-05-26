@@ -1,3 +1,49 @@
 .list {
   list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--card-gap);
+  /* height: calc(100vh - 120px); */
+
+  padding: 20px;
+  border: 2px solid #1976d2;
+  background-color: #1976d23d;
+  border-radius: 8px;
+  height: 78vh;
+  overflow-y: auto;
+  /* overflow-y: auto; */
+}
+
+.item {
+  --card-item: 1;
+
+  @media screen and (min-width: 768px) {
+    --card-item: 2;
+  }
+  @media screen and (min-width: 1200px) {
+    --card-item: 3;
+  }
+
+  flex-basis: calc(
+    ((100% - (var(--card-item) - 1) * var(--card-gap))) / var(--card-item)
+  );
+}
+
+.list::-webkit-scrollbar {
+  overflow: hidden;
+  width: 6px; /* ширина всей полосы прокрутки */
+}
+
+.list::-webkit-scrollbar-track {
+  border-radius: 20px;
+  /* background: #ffffff; */
+  /* background: orange;
+  overflow: hidden; */
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #1976d2;
+  border-radius: 20px;
+  /* border: 3px solid #ffffff; */
 }
