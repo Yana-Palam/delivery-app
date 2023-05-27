@@ -10,9 +10,15 @@ function CartList() {
   return (
     <div className={s.wrapper}>
       <ul className={s.list}>
-        {items.map(({ id, title, count, price }) => (
+        {items.map(({ id, title, count, price, imgUrl }) => (
           <li key={id}>
-            <CartListItem id={id} title={title} price={price} count={count} />
+            <CartListItem
+              id={id}
+              title={title}
+              price={price}
+              count={count}
+              imgUrl={imgUrl}
+            />
           </li>
         ))}
       </ul>

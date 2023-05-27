@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import axios from "axios";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { selectCartItems } from "../../redux/cart/cartSelectors";
+import {
+  selectCartItems,
+  selectTotalPrice,
+} from "../../redux/cart/cartSelectors";
 import s from "./CartForm.module.css";
+import { clearItems } from "../../redux/cart/cartSlice";
 
 function CartForm() {
   const [name, setName] = useState("");
@@ -12,18 +20,36 @@ function CartForm() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-  const cartItems = useSelector(selectCartItems);
+  const navigate = useNavigate();
 
-  const onSubmit = (e) => {
+  const dispatch = useDispatch();
+
+  const cartItems = useSelector(selectCartItems);
+  const totalPrice = useSelector(selectTotalPrice);
+
+  const onSubmit = async (e) => {
     e.preventDefault();
     const newOrder = {
       name,
       email,
       phone,
       address,
-      order: cartItems,
+      items: cartItems,
+      totalPrice,
     };
-    console.log(newOrder);
+    try {
+      await axios.post(
+        "https://delivery-app-r6bz.onrender.com/api/orders",
+        newOrder
+      );
+      toast.success("The order has been successfully placed!");
+      setName("");
+      setAddress("");
+      setEmail("");
+      setPhone("");
+      dispatch(clearItems());
+      navigate("/");
+    } catch (error) {}
   };
   return (
     <>

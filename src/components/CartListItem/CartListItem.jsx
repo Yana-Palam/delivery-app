@@ -15,7 +15,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-function CartListItem({ id, title, count, price }) {
+function CartListItem({ id, title, count, price, imgUrl }) {
   const dispatch = useDispatch();
 
   const isBtnDisabled = count === 1;
@@ -30,8 +30,8 @@ function CartListItem({ id, title, count, price }) {
       }}
     >
       <CardMedia
-        sx={{ height: 140, width: 280 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        sx={{ height: 140, width: 220 }}
+        image={imgUrl}
         title="green iguana"
       />
       <div className={s.wrapper}>

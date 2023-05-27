@@ -34,6 +34,11 @@ function AppBar() {
               </div>
             </NavLink>
           </li>
+          <li className={s.item}>
+            <NavLink className={s.link} to="/history">
+              <p>History</p>
+            </NavLink>
+          </li>
         </ul>
       </Container>
     </div>

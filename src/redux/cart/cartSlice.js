@@ -42,9 +42,15 @@ export const cartSlice = createSlice({
         return sum + item.price * item.count;
       }, 0);
     },
+
+    clearItems: (state) => {
+      state.items = [];
+      state.totalPrice = 0;
+    },
   },
 });
 
-export const { addItem, removeItem, plusItem, minusItem } = cartSlice.actions;
+export const { addItem, removeItem, plusItem, minusItem, clearItems } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -6,30 +6,17 @@
   height: 70vh;
   overflow-y: auto;
 }
-.list {
-  /* padding: 20px;
-  border: 2px solid #1976d2;
-  background-color: #1976d26d;
-  border-radius: 8px;
-  height: 70vh;
-  overflow-y: auto; */
-  /* width: 100%; */
-}
 
 .wrapper::-webkit-scrollbar {
   overflow: hidden;
-  width: 6px; /* ширина всей полосы прокрутки */
+  width: 6px;
 }
 
 .wrapper::-webkit-scrollbar-track {
   border-radius: 20px;
-  /* background: #ffffff; */
-  /* background: orange;
-  overflow: hidden; */
 }
 
 .wrapper::-webkit-scrollbar-thumb {
   background-color: #1976d2;
   border-radius: 20px;
-  /* border: 3px solid #ffffff; */
 }

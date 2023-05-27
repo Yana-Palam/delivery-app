@@ -11,7 +11,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-function FoodBlock({ id, title, price, shopId }) {
+function FoodBlock({ id, title, price, shopId, imgUrl }) {
   const dispatch = useDispatch();
 
   const findItem = useSelector(selectCartItemById(id));
@@ -23,16 +23,13 @@ function FoodBlock({ id, title, price, shopId }) {
       title,
       price,
       shopId,
+      imgUrl,
     };
     dispatch(addItem(item));
   };
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      />
+      <CardMedia sx={{ height: 160 }} image={imgUrl} title="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
@@ -57,18 +54,6 @@ function FoodBlock({ id, title, price, shopId }) {
         </Button>
       </CardActions>
     </Card>
-    // <div className={s.wrapper}>
-    //   <div
-    //     className={s.img}
-    //     style={{ height: "120px", backgroundColor: "#A68A56" }}
-    //   ></div>
-    //   <h2 className={s.title}>{title}</h2>
-    //   <p className={s.text}>Price: {price}$</p>
-    //   <button type="button" className={s.button} onClick={onClickAdd}>
-    //     add to cart{" "}
-    //     {addedCount === 0 ? "" : <span className={s.count}>{addedCount}</span>}
-    //   </button>
-    // </div>
   );
 }
 

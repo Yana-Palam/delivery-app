@@ -4,7 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--card-gap);
-  /* height: calc(100vh - 120px); */
 
   padding: 20px;
   border: 2px solid #1976d2;
@@ -12,7 +11,6 @@
   border-radius: 8px;
   height: 78vh;
   overflow-y: auto;
-  /* overflow-y: auto; */
 }
 
 .item {
@@ -32,18 +30,14 @@
 
 .list::-webkit-scrollbar {
   overflow: hidden;
-  width: 6px; /* ширина всей полосы прокрутки */
+  width: 6px;
 }
 
 .list::-webkit-scrollbar-track {
   border-radius: 20px;
-  /* background: #ffffff; */
-  /* background: orange;
-  overflow: hidden; */
 }
 
 .list::-webkit-scrollbar-thumb {
   background-color: #1976d2;
   border-radius: 20px;
-  /* border: 3px solid #ffffff; */
 }

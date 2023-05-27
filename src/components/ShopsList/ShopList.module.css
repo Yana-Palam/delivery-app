@@ -22,7 +22,6 @@
 
   padding: 20px 16px;
   border: 2px solid #1976d2;
-  /* background-color: #1976d26d; */
   border-radius: 8px;
   color: #1976d2;
   font-size: 18px;
@@ -35,24 +34,16 @@
   opacity: 0.8;
 }
 
-/* .item:not(:last-child) {
-  margin-bottom: 24px;
-} */
-
 .list::-webkit-scrollbar {
   overflow: hidden;
-  width: 6px; /* ширина всей полосы прокрутки */
+  width: 6px;
 }
 
 .list::-webkit-scrollbar-track {
   border-radius: 20px;
-  /* background: #ffffff; */
-  /* background: orange;
-  overflow: hidden; */
 }
 
 .list::-webkit-scrollbar-thumb {
   background-color: #1976d2;
   border-radius: 20px;
-  /* border: 3px solid #ffffff; */
 }
